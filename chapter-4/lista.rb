@@ -4,8 +4,10 @@ class Franquia
     @restaurantes = []
   end
 
-  def adiciona(restaurante)
-    @restaurantes << restaurante
+  def adiciona(*restaurantes)
+    for restaurante in restaurantes
+      @restaurantes << restaurante
+    end
   end
 
   def mostra
@@ -27,7 +29,7 @@ restaurante_dois = Restaurante.new
 restaurante_dois.nome = "Fogo de Chao"
 
 franquia = Franquia.new
-franquia.adiciona restaurante_um
-franquia.adiciona restaurante_dois
+# adicione ambos de uma só vez
+franquia.adiciona restaurante_um, restaurante_dois
 
 franquia.mostra
