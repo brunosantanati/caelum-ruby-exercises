@@ -1,4 +1,7 @@
 class Restaurante
+
+  attr_accessor :nota
+
   def initialize(nome)
     puts "criando um novo restaurante: #{nome}"
     @nome = nome
@@ -8,14 +11,6 @@ class Restaurante
     puts "A nota do #{@nome} foi #{@nota}. #{msg}"
   end
 
-  #propriedades
-  def nota=(nota)
-    @nota = nota
-  end
-  
-  def nota
-    @nota
-  end
 end
 
 # crie dois nomes diferentes
