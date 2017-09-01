@@ -11,8 +11,14 @@ class Franquia
   end
 
   def mostra
-    for restaurante in @restaurantes
-      puts restaurante.nome
+    @restaurantes.each do |r|
+      puts r.nome
+    end
+  end
+
+  def relatorio
+    @restaurantes.each do |r|
+      yield r
     end
   end
 
@@ -39,3 +45,8 @@ franquia = Franquia.new
 franquia.adiciona restaurante_um, restaurante_dois
 
 franquia.mostra
+
+# chamada com blocos
+franquia.relatorio do |r|
+  puts "Restaurante cadastrado: #{r.nome}"
+end
