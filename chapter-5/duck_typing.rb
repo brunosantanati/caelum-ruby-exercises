@@ -11,5 +11,11 @@ class Restaurante < Franquia
   end
 end
 
+# metodo importante
+# recebe franquia e invoca o método info
+def informa(franquia)
+  franquia.info
+end
+
 restaurante = Restaurante.new
-restaurante.info
+informa restaurante
