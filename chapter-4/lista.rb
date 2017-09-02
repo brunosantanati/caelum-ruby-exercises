@@ -22,6 +22,12 @@ class Franquia
     end
   end
 
+  def expandir(restaurante)
+    def restaurante.cadastrar_vips
+      puts "Restaurante #{self.nome} agora com área VIP!"
+    end
+  end
+
 end
 
 class Restaurante
@@ -41,9 +47,12 @@ restaurante_dois = Restaurante.new
 restaurante_dois.nome = "Fogo de Chao"
 
 franquia = Franquia.new
+# faça a franquia abrir a classe e adicionar o método
+franquia.expandir restaurante_um
+restaurante_um.cadastrar_vips
+
 # adicione ambos de uma só vez
 franquia.adiciona restaurante_um, restaurante_dois
-
 franquia.mostra
 
 # chamada com blocos
